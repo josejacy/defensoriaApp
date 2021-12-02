@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <div id="header" >
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-img
+        style="
+          width: 75px;
+          height: 75px;
+          margin-left: 30px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        "
+        src="../../assets/logo_defensoria.jpg"
+      ></ion-img>
+      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="font-weight: bolder; text-align: center">
+    <ion-text color="success">
+      <h4>Contatos</h4>
+    </ion-text>
+  </div>
+  <div>
+    <ion-list>
+      <ion-card *ngFor="let c of contato">
+        <a href="tel:+61{{c.numero}}">
+          <ion-card-header class="ion-text-justify">
+            <div>
+              <ion-icon
+                class="ion-padding-start"
+                color="success"
+                slot="start"
+                name="call"
+              ></ion-icon>
+              <ion-label class="ion-margin-start">{{c.nome}}</ion-label>
+              <ion-label class="ion-float-right ion-padding-end"
+                >{{c.numero}}</ion-label
+              >
+            </div>
+          </ion-card-header>
+        </a>
+      </ion-card>
+    </ion-list>
+  </div>
+</ion-content>

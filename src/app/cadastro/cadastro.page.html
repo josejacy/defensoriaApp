@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <div id="header" >
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-img
+        style="
+          width: 75px;
+          height: 75px;
+          margin-left: 30px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        "
+        src="../../assets/logo_defensoria.jpg"
+      ></ion-img>
+      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="font-weight: bolder; text-align: center">
+    <ion-text color="success">
+      <h4>Cadastro para Atendimento</h4>
+    </ion-text>
+  </div>
+  <div>
+    <form (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label position="stacked">Nome Completo</ion-label>
+      <ion-input name="nome" [(ngModel)]="nome" type="text" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">CPF*</ion-label>
+      <ion-input name="cpf"  type="number"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">E-mail</ion-label>
+      <ion-input name="email"  type="email" (ngModel)="model.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Endereço*</ion-label>
+      <ion-input name="endereco"  type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Complemeto</ion-label>
+      <ion-input name="complemento"  type="text"></ion-input>
+    </ion-item>
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="8">
+          <ion-item>
+            <ion-label position="stacked">Cidade</ion-label>
+            <ion-input name="cidade"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="stacked">UF</ion-label>
+            <ion-input name="uf"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="ion-align-items-center">
+        <ion-col size="4">
+          <ion-item>
+            <ion-label position="stacked">DDD*</ion-label>
+            <ion-input name="ddd"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="8">
+          <ion-item>
+            <ion-label position="stacked">Telefone*</ion-label>
+            <ion-input name="telefone"  type="text"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <div
+      style="
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        text-align: center;
+      "
+    >
+      <ion-button color="success" (click)="onClick()" ion-button round
+        >Cadastrar</ion-button
+      >
+    </div>
+  </form>
+  </div>
+</ion-content>

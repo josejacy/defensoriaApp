@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <div id="header" >
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-img
+        style="
+          width: 75px;
+          height: 75px;
+          margin-left: 30px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        "
+        src="../../assets/logo_defensoria.jpg"
+      ></ion-img>
+      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content
+      loadingSpinner="circles"
+      loadingText="Loading more data…"
+    >
+    <div style="font-weight: bolder; text-align: center">
+      <ion-text color="success">
+        <h4>Notícias</h4>
+      </ion-text>
+    </div>
+      <ion-card *ngFor="let n of noticia">
+        <ion-card-header  class="ion-text-start">
+          <p>Publicado em: {{n.data}}</p>
+          <img src="https://defensoria.ac.def.br/{{n.imagem}}" alt="" />
+          <ion-card-subtitle class="ion-text-center ion-margin-top"
+            >{{n.titulo}}</ion-card-subtitle
+          >
+        </ion-card-header>
+        <ion-card-content>
+          <p class="ion-text-justify">{{ (n.texto.length>210)? (n.texto | slice:0:210)+'..':(n.texto) }}</p>
+          <button class="ion-margin-top"
+            size="small"
+            color="success"
+            (click)="onClick()"
+            >Ler mais...</button
+          >
+        </ion-card-content>
+      </ion-card>
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <div id="header" >
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-img
+        style="
+          width: 75px;
+          height: 75px;
+          margin-left: 30px;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        "
+        src="../../assets/logo_defensoria.jpg"
+      ></ion-img>
+      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="font-weight: bolder; text-align: center">
+    <ion-text color="success">
+      <h4>Documentos Uteis</h4>
+    </ion-text>
+  </div>
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-icon slot="start" name="cloud-download" color="success" ></ion-icon>
+        <ion-label>Documentos para Baixar</ion-label>
+      </ion-item>
+            <ion-card *ngFor="let d of documento">
+              <ion-card-header class="ion-text-start">
+                <div>
+                <a href="{{d.arquivo}}"><ion-icon slot="start" name="cloud-download" color="success"></ion-icon></a>
+                <ion-label class="ion-margin-start">{{d.texto}}</ion-label>
+              </div>
+              </ion-card-header>
+            </ion-card>
+    </ion-list>
+  </div>
+</ion-content>
