@@ -24,24 +24,62 @@
     </ion-text>
   </div>
   <div>
-    <form (ngSubmit)="logForm()">
+    <form [formGroup]="formCadastro" >
     <ion-item>
       <ion-label position="stacked">Nome Completo</ion-label>
-      <ion-input name="nome" [(ngModel)]="nome" type="text" ></ion-input>
+      <ion-input formControlName="nome"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+         {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">CPF*</ion-label>
-      <ion-input name="cpf"  type="number"></ion-input>
+      <ion-input formControlName="cpf" ></ion-input>
+      <ng-container *ngFor="let erro of mensagens.cpf">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('cpf').hasError(erro.tipo) && (formCadastro.get('cpf').dirty || formCadastro.get('cpf').touched)">
+         {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
     <ion-item>
       <ion-label position="stacked">E-mail</ion-label>
-      <ion-input name="email"  type="email" (ngModel)="model.email"></ion-input>
+      <ion-input formControlName="email" ></ion-input>
+      <ng-container *ngFor="let erro of mensagens.email">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+         {{erro.mensagem}}
+        </span>
+      </ng-container>
     </ion-item>
     <ion-item>
+      <ion-label position="stacked">Senha</ion-label>
+      <ion-input formControlName="senha" type="password"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.senha">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('senha').hasError(erro.tipo) && (formCadastro.get('senha').dirty || formCadastro.get('senha').touched)">
+         {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Confirmar Senha</ion-label>
+      <ion-input formControlName="confirmaSenha" name="email"  type="password" ></ion-input>
+      <ng-container *ngFor="let erro of mensagens.confirmaSenha">
+        <span class="msg-erro"
+        *ngIf="formCadastro.get('confirmaSenha').hasError(erro.tipo) && (formCadastro.get('confirmaSenha').dirty || formCadastro.get('confirmaSenha').touched)">
+         {{erro.mensagem}}
+        </span>
+      </ng-container>
+    </ion-item>
+    <!-- <ion-item>
       <ion-label position="stacked">Endereço*</ion-label>
       <ion-input name="endereco"  type="text"></ion-input>
-    </ion-item>
-    <ion-item>
+    </ion-item> -->
+    <!-- <ion-item>
       <ion-label position="stacked">Complemeto</ion-label>
       <ion-input name="complemento"  type="text"></ion-input>
     </ion-item>
@@ -75,7 +113,7 @@
           </ion-item>
         </ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid> -->
     <div
       style="
         margin-top: 20px;
@@ -85,7 +123,7 @@
         text-align: center;
       "
     >
-      <ion-button color="success" (click)="onClick()" ion-button round
+      <ion-button color="success" (click)="SalvarCadastro()" ion-button round
         >Cadastrar</ion-button
       >
     </div>

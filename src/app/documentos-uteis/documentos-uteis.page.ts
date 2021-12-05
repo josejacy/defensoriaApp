@@ -1,7 +1,12 @@
 
+
 import { ServiceDocService  } from '../service-doc.service';
 import { Component, OnInit } from '@angular/core';
 import { Documentos } from './../service/api.service';
+import { LoadingController } from '@ionic/angular';
+
+
+
 
 @Component({
   selector: 'app-documentos-uteis',
@@ -10,14 +15,16 @@ import { Documentos } from './../service/api.service';
 })
 export class DocumentosUteisPage implements OnInit {
   documento: Documentos[];
-  constructor(private ServiceDocService: ServiceDocService) { 
+  constructor(private ServiceDocService: ServiceDocService,  public loadingController: LoadingController) { 
     this.getData();
+  
   }
 
-  ngOnInit() {
-    this.ServiceDocService.getAll().subscribe(data => {
+
+  async ngOnInit() {
+    this.presentLoading();
+    await this.ServiceDocService.getAll().subscribe(data => {
       this.documento = data;
-      console.log('entrou');
     })
 
   }
@@ -28,5 +35,15 @@ export class DocumentosUteisPage implements OnInit {
     }
       )
   }
+  async presentLoading() {
+    const loading = await this.loadingController.create({
+      cssClass: 'qualquer',
+      message: 'carregando..',
+      duration: 500
+    });
+    await loading.present();
+  }
+ 
 
 }
+

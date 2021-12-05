@@ -1,7 +1,8 @@
 {
   "name": "defensoriaApp",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
