@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <div id="header" >
-      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
           width: 75px;
@@ -12,19 +12,13 @@
         "
         src="../../assets/logo_defensoria.jpg"
       ></ion-img>
-      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+      <p style="margin: 20px">Perguntas Frequentes</p>
     </div>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div>
-    <ion-text  color="success">
-      <p class="ion-text-center" style="font-weight: bolder; margin-left: 30px">
-        PERGUNTAS FREQUENTES
-      </p>
-    </ion-text>
-  </div>
+  
   <!-- List of Text Items -->
   <ion-list>
     <ion-item *ngFor="let p of pergunta">
@@ -41,17 +35,9 @@
     </ion-item>
   </ion-list>
 </ion-content>
-<ion-footer>
-  <div
-    style="
-      margin-bottom: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      text-align: center;
-    "
-  >
-    <ion-icon slot="primary" slot="start" name="keypad"></ion-icon>
-    <ion-icon slot="end" name="key"></ion-icon>
-  </div>
-</ion-footer>
+
+<ion-footer style="background-color: rgb(5, 110, 75); text-align: center; " >
+  <ion-text color="light">
+        <h6>Defensoria do Estado do Acre</h6>
+    </ion-text>
+  </ion-footer>

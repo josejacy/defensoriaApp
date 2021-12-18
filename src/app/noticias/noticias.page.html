@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <div id="header" >
-      <ion-menu-button color="dark"></ion-menu-button>
+    <div id="header" class="text-center" >
+      <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
           width: 75px;
@@ -12,7 +12,7 @@
         "
         src="../../assets/logo_defensoria.jpg"
       ></ion-img>
-      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+      <p style="margin: 20px ">Notícias</p>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -23,11 +23,6 @@
       loadingSpinner="circles"
       loadingText="Loading more data…"
     >
-    <div style="font-weight: bolder; text-align: center">
-      <ion-text color="success">
-        <h4>Notícias</h4>
-      </ion-text>
-    </div>
       <ion-card *ngFor="let n of noticia">
         <ion-card-header  class="ion-text-start">
           <p>Publicado em: {{n.data}}</p>
@@ -49,3 +44,8 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
+<ion-footer style="background-color: rgb(5, 110, 75); text-align: center; " >
+  <ion-text color="light">
+        <h6>Defensoria do Estado do Acre</h6>
+    </ion-text>
+  </ion-footer>

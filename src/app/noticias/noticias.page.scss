@@ -5,7 +5,7 @@ p {
 ion-card-subtitle {
     color: #000000;
 }
-#header {
+#background_defensoria {
     background: #006633  !important; /* Old browsers */
       background: -moz-linear-gradient(top,  #006633 2%, #349937 100%) !important; /* FF3.6-15 */
       background: -webkit-linear-gradient(top,  #006633 2%,#349937 100%) !important; /* Chrome10-25,Safari5.1-6 */
@@ -17,5 +17,5 @@ ion-card-subtitle {
 #header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    // justify-content: space-around;
 }

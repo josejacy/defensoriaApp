@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <div id="header" >
-      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
           width: 75px;
@@ -12,7 +12,7 @@
         "
         src="../../assets/logo_defensoria.jpg"
       ></ion-img>
-      <p style="margin: 20px">DEFENSORIA PÚBLICA DO ESTADO DO ACRE</p>
+      <p style="margin: 20px">Início</p>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -30,13 +30,10 @@
     <ion-label >Criar conta nova?</ion-label>
   </div>
 </ion-content>
-<ion-footer>
-  <ion-toolbar style="text-align: center; padding: 20px;">
-    <p style="font-weight: bolder;">Informações e Notícias Gerais Sobre atendimentos e serviços</p>
+<ion-footer id="background_defensoria" >
+  <div >
+  <ion-toolbar class="footer" style="text-align: center; ">
+    <p style="font-weight: bolder;">Defensoria do Estado do Acre</p>
   </ion-toolbar>
-  <div style=" display: flex; align-items: center; justify-content: space-around; text-align: center;">
-     <ion-icon slot="start" slot="start" name="keypad"></ion-icon>
-    <ion-button color="secondary"  (click)="onClick()" size="small" ion-button round>ACESSE</ion-button>  
-    <ion-icon slot="end" name="key"></ion-icon>
-  </div>
+</div>
 </ion-footer>
