@@ -3,10 +3,7 @@
     <div id="header" >
       <ion-menu-button color="success"></ion-menu-button>
       <ion-img
-        style="
-          
-         
-        "
+       
         src="../../assets/logoHeader.jpeg"
       ></ion-img>
       <p style="margin: 20px">Cadastro</p>
@@ -19,10 +16,10 @@
     <form [formGroup]="formCadastro" >
       <ion-item>
         <ion-label position="stacked">Telefone Celular</ion-label>
-        <ion-input formControlName="nome"></ion-input>
-        <ng-container *ngFor="let erro of mensagens.nome">
+        <ion-input formControlName="tel_celular"></ion-input>
+        <ng-container *ngFor="let erro of mensagens.tel_celular">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+          *ngIf="formCadastro.get('tel_celular').hasError(erro.tipo) && (formCadastro.get('tel_celular').dirty || formCadastro.get('tel_celular').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
@@ -39,70 +36,98 @@
       </ion-item>
       <ion-item>
         <ion-label position="stacked">CEP</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-input formControlName="cep" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.cep">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('cep').hasError(erro.tipo) && (formCadastro.get('cep').dirty || formCadastro.get('cep').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Estado</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-select  formControlName="estado">
+          <ion-select-option value="AC">Acre</ion-select-option>
+          <ion-select-option value="AL">Alagoas</ion-select-option>
+          <ion-select-option value="AP">Amapá</ion-select-option>
+          <ion-select-option value="AM">Amazonas</ion-select-option>
+          <ion-select-option value="BA">Bahia</ion-select-option>
+          <ion-select-option value="CE">Ceará</ion-select-option>
+          <ion-select-option value="DF">Distrito Federal</ion-select-option>
+          <ion-select-option value="ES">Espírito Santo</ion-select-option>
+          <ion-select-option value="GO">Goiás</ion-select-option>
+          <ion-select-option value="MA">Maranhão</ion-select-option>
+          <ion-select-option value="MT">Mato Grosso</ion-select-option>
+          <ion-select-option value="MS">Mato Grosso do Sul</ion-select-option>
+          <ion-select-option value="MG">Minas Gerais</ion-select-option>
+          <ion-select-option value="PA">Pará</ion-select-option>
+          <ion-select-option value="PB">Paraíba</ion-select-option>
+          <ion-select-option value="PR">Paraná</ion-select-option>
+          <ion-select-option value="PE">Pernanbuco</ion-select-option>
+          <ion-select-option value="PI">Piauí</ion-select-option>
+          <ion-select-option value="RJ">Rio de Janeiro</ion-select-option>
+          <ion-select-option value="RN">Rio Grande do Norte</ion-select-option>
+          <ion-select-option value="RS">Rio Grande do Sul</ion-select-option>
+          <ion-select-option value="RO">Rondônia</ion-select-option>
+          <ion-select-option value="RR">Roraima</ion-select-option>
+          <ion-select-option value="SC">Santa Catarina</ion-select-option>
+          <ion-select-option value="SP">São Paulo</ion-select-option>
+          <ion-select-option value="SE">Sergipe</ion-select-option>
+          <ion-select-option value="TO">Tocantins</ion-select-option>
+        </ion-select>
+        <ng-container *ngFor="let erro of mensagens.estado">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('estado').hasError(erro.tipo) && (formCadastro.get('estado').dirty || formCadastro.get('estado').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Município</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-input formControlName="municipio" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.municipio">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('municipio').hasError(erro.tipo) && (formCadastro.get('municipio').dirty || formCadastro.get('municipio').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Bairro</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-input formControlName="bairro" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.bairro">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('bairro').hasError(erro.tipo) && (formCadastro.get('bairro').dirty || formCadastro.get('bairro').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Logradouro</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-input formControlName="logradouro" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.logradouro">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('logradouro').hasError(erro.tipo) && (formCadastro.get('logradouro').dirty || formCadastro.get('logradouro').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Numero</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-input formControlName="numero" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.numero">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('numero').hasError(erro.tipo) && (formCadastro.get('numero').dirty || formCadastro.get('numero').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="stacked">Complemento</ion-label>
-        <ion-input formControlName="email" ></ion-input>
-        <ng-container *ngFor="let erro of mensagens.email">
+        <ion-input formControlName="complemento" ></ion-input>
+        <ng-container *ngFor="let erro of mensagens.complemento">
           <span class="msg-erro"
-          *ngIf="formCadastro.get('email').hasError(erro.tipo) && (formCadastro.get('email').dirty || formCadastro.get('email').touched)">
+          *ngIf="formCadastro.get('complemento').hasError(erro.tipo) && (formCadastro.get('complemento').dirty || formCadastro.get('complemento').touched)">
            {{erro.mensagem}}
           </span>
         </ng-container>
@@ -129,10 +154,10 @@
     </ion-item>
     <ion-item>
       <ion-label position="stacked">Informe o nome da sua mãe</ion-label>
-      <ion-input formControlName="nome"></ion-input>
-      <ng-container *ngFor="let erro of mensagens.nome">
+      <ion-input formControlName="nome_mae"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome_mae">
         <span class="msg-erro"
-        *ngIf="formCadastro.get('nome').hasError(erro.tipo) && (formCadastro.get('nome').dirty || formCadastro.get('nome').touched)">
+        *ngIf="formCadastro.get('nome_mae').hasError(erro.tipo) && (formCadastro.get('nome_mae').dirty || formCadastro.get('nome_mae').touched)">
          {{erro.mensagem}}
         </span>
       </ng-container>
@@ -144,9 +169,9 @@
     <ion-item>
       <ion-label>Informe o sexo</ion-label>
       <ion-select>
-        <ion-select-option >Masculino</ion-select-option>
-        <ion-select-option>Feminino</ion-select-option>
-        <ion-select-option>Outros</ion-select-option>
+        <ion-select-option value="M">Masculino</ion-select-option>
+        <ion-select-option value="F">Feminino</ion-select-option>
+        <ion-select-option value="O">Outros</ion-select-option>
       </ion-select>
     </ion-item>
     <ion-item>
