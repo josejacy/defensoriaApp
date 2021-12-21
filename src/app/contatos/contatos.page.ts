@@ -11,17 +11,15 @@ export class ContatosPage implements OnInit {
   contato: contatos[];
   constructor(private ContatoService: ContatoService) {
     this.getData();
-   }
+  }
 
   ngOnInit() {
-    this.ContatoService.getAll().subscribe(data => {
+    this.ContatoService.getAll().subscribe((data) => {
       this.contato = data;
-    })
+    });
   }
 
   getData() {
-    this.ContatoService.getData().subscribe(data =>{
-    })
+    this.ContatoService.getData().subscribe((data) => {});
   }
-
 }

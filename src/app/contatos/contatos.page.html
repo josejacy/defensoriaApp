@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <div id="header" >
+    <div id="header">
       <ion-menu-button color="dark"></ion-menu-button>
       <ion-img
         style="
@@ -9,7 +9,6 @@
           margin-left: 30px;
           padding-top: 20px;
           padding-bottom: 20px;
-          
         "
         src="../../assets/logoHeader.jpeg"
       ></ion-img>
@@ -18,10 +17,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content >
-  <div style="font-weight: bolder; text-align: center">
-   
-  </div>
+<ion-content>
+  <div style="font-weight: bolder; text-align: center"></div>
   <div>
     <ion-list>
       <ion-card *ngFor="let c of contato">
@@ -34,7 +31,7 @@
                 slot="start"
                 name="call"
               ></ion-icon>
-              <ion-label   class="ion-margin-start ">{{c.nome}}</ion-label>
+              <ion-label class="ion-margin-start">{{c.nome}}</ion-label>
               <ion-label class="ion-float-right ion-padding-end"
                 >{{c.numero}}</ion-label
               >
@@ -45,10 +42,8 @@
     </ion-list>
   </div>
 </ion-content>
-<ion-footer id="background_defensoria">
-  <div >
-  <ion-toolbar class="footer" style="text-align: center; ">
-    <p style="font-weight: bolder;">Defensoria do Estado do Acre</p>
-  </ion-toolbar>
-</div>
+<ion-footer style="background-color: rgb(5, 110, 75); text-align: center">
+  <ion-text color="light">
+    <h6>Defensoria do Estado do Acre</h6>
+  </ion-text>
 </ion-footer>

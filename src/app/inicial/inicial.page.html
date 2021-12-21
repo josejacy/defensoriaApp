@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <div id="header" >
+    <div id="header">
       <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
@@ -18,22 +18,44 @@
 </ion-header>
 
 <ion-content>
-  <ion-img style="width: 300px; height: 300px; margin: auto; padding-top: 20px; padding-bottom: 20px;" src="../../assets/logo_defensoria.jpg"></ion-img>
-  <div style="margin: auto; text-align: center;">
-    <ion-input class="ion-margin-horizontal" type="text" placeholder="CPF: 999.999.999-99"></ion-input>
+  <ion-img
+    style="
+      width: 300px;
+      height: 300px;
+      margin: auto;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    "
+    src="../../assets/logo_defensoria.jpg"
+  ></ion-img>
+  <div style="margin: auto; text-align: center">
+    <ion-input
+      class="ion-margin-horizontal"
+      type="text"
+      placeholder="CPF: 999.999.999-99"
+    ></ion-input>
   </div>
-  <ion-button (click)="onClick()" ion-button color="success" ion-button round expand="block" style="margin: 20px">Continue</ion-button>
-  <div style="margin: auto; text-align: center; margin-bottom: 20px;">
-    <ion-label >Deixar gravado</ion-label>
+  <ion-button
+    (click)="onClick()"
+    ion-button
+    color="success"
+    ion-button
+    round
+    expand="block"
+    style="margin: 20px"
+    >Continue</ion-button
+  >
+  <div style="margin: auto; text-align: center; margin-bottom: 20px">
+    <ion-label>Deixar gravado</ion-label>
   </div>
-  <div style="margin: auto; text-align: center;">
-    <ion-label >Criar conta nova?</ion-label>
+  <div style="margin: auto; text-align: center">
+    <ion-label>Criar conta nova?</ion-label>
   </div>
 </ion-content>
-<ion-footer id="background_defensoria" >
-  <div >
-  <ion-toolbar class="footer" style="text-align: center; ">
-    <p style="font-weight: bolder;">Defensoria do Estado do Acre</p>
-  </ion-toolbar>
-</div>
+<ion-footer id="background_defensoria">
+  <div>
+    <ion-toolbar class="footer" style="text-align: center">
+      <p style="font-weight: bolder">Defensoria do Estado do Acre</p>
+    </ion-toolbar>
+  </div>
 </ion-footer>

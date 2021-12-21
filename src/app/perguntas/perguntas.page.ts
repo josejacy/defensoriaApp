@@ -11,21 +11,17 @@ export class PerguntasPage implements OnInit {
   pergunta: Perguntas[];
   constructor(private PerguntaService: PerguntaService) {
     this.getData();
-   }
+  }
 
   ngOnInit() {
-    this.PerguntaService.getAll().subscribe(data => {
+    this.PerguntaService.getAll().subscribe((data) => {
       this.pergunta = data;
-    })
+    });
   }
 
-  getData(){
-    this.PerguntaService.getData().subscribe(data =>  {
+  getData() {
+    this.PerguntaService.getData().subscribe((data) => {
       console.log(data);
-    }
-      )
+    });
   }
-
 }
-
-

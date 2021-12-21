@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <div id="header" class="text-center" >
+    <div id="header" class="text-center">
       <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
@@ -12,7 +12,7 @@
         "
         src="../../assets/logo_defensoria.jpg"
       ></ion-img>
-      <p style="margin: 20px ">Notícias</p>
+      <p style="margin: 20px">Notícias</p>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -24,7 +24,7 @@
       loadingText="Loading more data…"
     >
       <ion-card *ngFor="let n of noticia">
-        <ion-card-header  class="ion-text-start">
+        <ion-card-header class="ion-text-start">
           <p>Publicado em: {{n.data}}</p>
           <img src="https://defensoria.ac.def.br/{{n.imagem}}" alt="" />
           <ion-card-subtitle class="ion-text-center ion-margin-top"
@@ -32,20 +32,24 @@
           >
         </ion-card-header>
         <ion-card-content>
-          <p class="ion-text-justify">{{ (n.texto.length>210)? (n.texto | slice:0:210)+'..':(n.texto) }}</p>
-          <button class="ion-margin-top"
+          <p class="ion-text-justify">
+            {{ (n.texto.length>210)? (n.texto | slice:0:210)+'..':(n.texto) }}
+          </p>
+          <button
+            class="ion-margin-top"
             size="small"
             color="success"
             (click)="onClick()"
-            >Ler mais...</button
           >
+            Ler mais...
+          </button>
         </ion-card-content>
       </ion-card>
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
-<ion-footer style="background-color: rgb(5, 110, 75); text-align: center; " >
+<ion-footer style="background-color: rgb(5, 110, 75); text-align: center">
   <ion-text color="light">
-        <h6>Defensoria do Estado do Acre</h6>
-    </ion-text>
-  </ion-footer>
+    <h6>Defensoria do Estado do Acre</h6>
+  </ion-text>
+</ion-footer>

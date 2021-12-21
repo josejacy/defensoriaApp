@@ -9,12 +9,9 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 export class ChatPage implements OnInit {
   constructor(private iab: InAppBrowser) {}
 
-  ngOnInit() {
-   
-  }
+  ngOnInit() {}
 
   openSystem() {
     this.iab.create('https://atendimento.ac.def.br/atendimento', '_system');
   }
-
 }

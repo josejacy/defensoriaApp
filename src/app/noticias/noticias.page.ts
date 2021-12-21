@@ -10,30 +10,30 @@ import { LoadingController } from '@ionic/angular';
 })
 export class NoticiasPage implements OnInit {
   noticia: Noticias[];
-  constructor(private ServiceNoticiaService: ServiceNoticiaService, public loadingController: LoadingController) { }
+  constructor(
+    private ServiceNoticiaService: ServiceNoticiaService,
+    public loadingController: LoadingController
+  ) {}
 
- async ngOnInit() {
+  async ngOnInit() {
     this.presentLoading();
-   await this.ServiceNoticiaService.getAll().subscribe(data => {
+    await this.ServiceNoticiaService.getAll().subscribe((data) => {
       this.noticia = data;
-    })
+    });
   }
 
-  getData(){
-    this.ServiceNoticiaService.getData().subscribe(data =>  {
+  getData() {
+    this.ServiceNoticiaService.getData().subscribe((data) => {
       console.log(data);
-    }
-      )
+    });
   }
 
   async presentLoading() {
     const loading = await this.loadingController.create({
       cssClass: 'qualquer',
       message: 'carregando..',
-      duration: 700
+      duration: 700,
     });
     await loading.present();
   }
-
-
 }

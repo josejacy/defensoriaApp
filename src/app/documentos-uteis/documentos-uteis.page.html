@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <div id="header" >
+    <div id="header">
       <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
@@ -18,26 +18,31 @@
 </ion-header>
 
 <ion-content>
-  
-  <div style="margin-top: 20px;">
+  <div style="margin-top: 20px">
     <ion-list>
       <ion-item>
-        <ion-icon slot="start" name="cloud-download" color="success" ></ion-icon>
+        <ion-icon slot="start" name="cloud-download" color="success"></ion-icon>
         <ion-label>Documentos para Baixar</ion-label>
       </ion-item>
-            <ion-card *ngFor="let d of documento">
-              <ion-card-header class="ion-text-start">
-                <div>
-                <a href="https://defensoria.ac.def.br/back-end/{{d.arquivo}}"><ion-icon slot="start" name="cloud-download" color="success"></ion-icon></a>
-                <ion-label  class="ion-margin-start">{{d.texto}}</ion-label>
-              </div>
-              </ion-card-header>
-            </ion-card>
+      <ion-card *ngFor="let d of documento">
+        <ion-card-header class="ion-text-start">
+          <div>
+            <a href="https://defensoria.ac.def.br/back-end/{{d.arquivo}}"
+              ><ion-icon
+                slot="start"
+                name="cloud-download"
+                color="success"
+              ></ion-icon
+            ></a>
+            <ion-label class="ion-margin-start">{{d.texto}}</ion-label>
+          </div>
+        </ion-card-header>
+      </ion-card>
     </ion-list>
   </div>
 </ion-content>
-<ion-footer style="background-color: rgb(5, 110, 75); text-align: center; " >
+<ion-footer style="background-color: rgb(5, 110, 75); text-align: center">
   <ion-text color="light">
-        <h6>Defensoria do Estado do Acre</h6>
-    </ion-text>
-  </ion-footer>
+    <h6>Defensoria do Estado do Acre</h6>
+  </ion-text>
+</ion-footer>

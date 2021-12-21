@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <div id="header" >
+    <div id="header">
       <ion-menu-button color="success"></ion-menu-button>
       <ion-img
         style="
@@ -18,16 +18,15 @@
 </ion-header>
 
 <ion-content>
-  
   <!-- List of Text Items -->
   <ion-list>
     <ion-item *ngFor="let p of pergunta">
-      <div >
-        <div >
-        <ion-text class="ion-text-center" color="success">
-          <h6>{{p.pergunta}}</h6>
-        </ion-text>
-      </div>
+      <div>
+        <div>
+          <ion-text class="ion-text-center" color="success">
+            <h6>{{p.pergunta}}</h6>
+          </ion-text>
+        </div>
         <ion-text class="ion-text-justify" color="dark">
           <p class="ion-padding-end" size="small">{{p.resposta}}</p>
         </ion-text>
@@ -36,8 +35,8 @@
   </ion-list>
 </ion-content>
 
-<ion-footer style="background-color: rgb(5, 110, 75); text-align: center; " >
+<ion-footer style="background-color: rgb(5, 110, 75); text-align: center">
   <ion-text color="light">
-        <h6>Defensoria do Estado do Acre</h6>
-    </ion-text>
-  </ion-footer>
+    <h6>Defensoria do Estado do Acre</h6>
+  </ion-text>
+</ion-footer>
